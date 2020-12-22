@@ -213,7 +213,9 @@ export class BarComponent implements OnInit {
   loadchart(){
 // Create chart instance
 let chart = am4core.create("chartdiv2", am4charts.XYChart3D);
-
+let title = chart.titles.create();
+title.text = "[font-size: 16]Happiness Score of top 10 ranked countries in " + "2019";
+title.textAlign = "middle";
 // Add data
 chart.data = this.Data[4];
 
@@ -262,6 +264,7 @@ setInterval(() =>{
     if(this.i==5)
       this.i=0;
     chart.data = this.Data[this.i];
+    title.text = "[font-size: 16]Happiness Score of top 10 ranked countries in " + (2015+this.i).toString();
     this.i++;
     chart.invalidateRawData();
 }, 5000);

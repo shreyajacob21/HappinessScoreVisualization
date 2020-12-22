@@ -10,14 +10,16 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BarComponent } from './components/bar/bar.component';
 import { MatGridListModule} from '@angular/material/grid-list';
-import { DonutComponent } from './components/donut/donut.component'
+import { DonutComponent } from './components/donut/donut.component';
+import { CompareComponent } from './components/compare/compare.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     BarComponent,
-    DonutComponent
+    DonutComponent,
+    CompareComponent
   ],
   imports: [
     BrowserModule,

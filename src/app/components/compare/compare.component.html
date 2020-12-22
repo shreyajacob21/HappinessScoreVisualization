@@ -1,0 +1,25 @@
+<div id = "chartdiv4" style="height: 400px; width: 730px;"></div>
+<div style="float: left;">
+    <mat-form-field appearance="fill" style="width : 50%;">
+        <mat-label>Country</mat-label>
+            <mat-select  [(ngModel)]="selectedCountry1" name = "country1" (ngModelChange)="onSelectCountry1()">
+            <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
+            </mat-select>
+    </mat-form-field>
+</div>
+<div style="float: left;">
+    <mat-form-field appearance="fill" style="width : 50%;">
+        <mat-label>Country</mat-label>
+            <mat-select  [(ngModel)]="selectedCountry2" name = "country2" (ngModelChange)="onSelectCountry2()">
+            <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
+            </mat-select>
+    </mat-form-field>
+</div>
+<div style="float: left;">
+    <mat-form-field appearance="fill" style="width : 50%;">
+        <mat-label>Year</mat-label>
+            <mat-select  [(ngModel)]="selectedYear" name = "year" (ngModelChange)="onSelectYear()">
+            <mat-option [value]="year" *ngFor="let year of years">{{ year }}</mat-option>
+            </mat-select>
+    </mat-form-field>
+</div>
