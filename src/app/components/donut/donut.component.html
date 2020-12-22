@@ -1,10 +1,12 @@
 
-<div id = "chartdiv3" style="height: 300px; width: 700px;"></div>
-<div style="float: left;">
-        <mat-form-field appearance="fill" style="width : 50%;">
-            <mat-label>Country</mat-label>
-                <mat-select  [(ngModel)]="selectedValue" name = "country" (ngModelChange)="onSelectCountry()">
-                <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
-                </mat-select>
-        </mat-form-field>
-    </div>
+<!-- <div style="float: left;"> -->
+    <mat-form-field appearance="fill" style="width : 25%;">
+        <mat-label>Country</mat-label>
+            <mat-select  [(ngModel)]="selectedValue" name = "country" (ngModelChange)="onSelectCountry()">
+            <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
+            </mat-select>
+    </mat-form-field>
+<!-- </div> -->
+Happiness score division of {{selectedValue}}
+<div id = "chartdiv3" style=" width: 700px;"></div>
+<div id="legenddiv"></div>

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4maps from "@amcharts/amcharts4/maps";
+import * as am4charts from "@amcharts/amcharts4/charts"
 import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
@@ -2673,7 +2674,7 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.loadChart();
     this.imageSeries.data = this.mapData[4];
-    this.title.text = "[bold font-size: 20]Happiness Rank of the World in " + "2019";
+    this.title.text = "[font-size: 18]Happiness Score of the World in " + "2019";
   }
 
   loadChart(){
@@ -2683,8 +2684,6 @@ export class MapComponent implements OnInit {
     this.title = chart.titles.create();
     
     this.title.textAlign = "middle";
-
-    
 
     // Set map definition
     chart.geodata = am4geodata_worldLow;
@@ -2746,13 +2745,22 @@ export class MapComponent implements OnInit {
       return longitude;
     })
 
+    let heatLegend = chart.createChild(am4charts.HeatLegend);
+    heatLegend.minColor = chart.colors.getIndex(0).brighten(1);
+    heatLegend.maxColor = chart.colors.getIndex(0).brighten(-0.9);
+    heatLegend.minValue = 2.8;
+    heatLegend.maxValue = 7.7;
+    heatLegend.orientation = "vertical";
+
+
     setInterval(()=>{
       if(this.i==5)
         this.i=0;
       this.imageSeries.data = this.mapData[this.i];
-      this.title.text = "[bold font-size: 20]Happiness Rank of the World in " + (2015+this.i).toString();
+      this.title.text = "[font-size: 18]Happiness Score of the World in " + (2015+this.i).toString();
       this.i++;
    }, 5000);
   }
+  
   
 }
