@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-/* Imports */
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 
-/* Chart code */
 // Themes begin
 am4core.useTheme(am4themes_animated);
 // Themes end
@@ -19484,13 +19482,7 @@ export class DonutComponent implements OnInit {
     this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
     this.chart.data = this.data2015["Finland"];
-
     this.chart.innerRadius = am4core.percent(40);
-    // chart.depth = 120;
-
-    // this.chart.legend = new am4charts.Legend();
-    // this.chart.legend.maxHeight = 150;
-    // this.chart.legend.scrollable = true;
 
     let series = this.chart.series.push(new am4charts.PieSeries());
     series.labels.template.disabled = true;
@@ -19515,11 +19507,6 @@ export class DonutComponent implements OnInit {
     this.chart2.data = this.data2016["Finland"];
 
     this.chart2.innerRadius = am4core.percent(40);
-    // chart.depth = 120;
-
-    // this.chart2.legend = new am4charts.Legend();
-    // this.chart2.legend.maxHeight = 150;
-    // this.chart2.legend.scrollable = true;
 
     let series2 = this.chart2.series.push(new am4charts.PieSeries());
     series2.labels.template.disabled = true;
@@ -19544,11 +19531,6 @@ export class DonutComponent implements OnInit {
     this.chart3.data = this.data2017["Finland"];
 
     this.chart3.innerRadius = am4core.percent(40);
-    // chart.depth = 120;
-
-    // this.chart3.legend = new am4charts.Legend();
-    // this.chart3.legend.maxHeight = 150;
-    // this.chart3.legend.scrollable = true;
 
     let series3 = this.chart3.series.push(new am4charts.PieSeries());
     series3.labels.template.disabled = true;
@@ -19572,11 +19554,6 @@ export class DonutComponent implements OnInit {
 
     this.chart4.data = this.data2018["Finland"];
     this.chart4.innerRadius = am4core.percent(40);
-    // chart.depth = 120;
-
-    // this.chart4.legend = new am4charts.Legend();
-    // this.chart4.legend.maxHeight = 150;
-    // this.chart4.legend.scrollable = true;
 
     let series4 = this.chart4.series.push(new am4charts.PieSeries());
     series4.labels.template.disabled = true;
@@ -19599,13 +19576,7 @@ export class DonutComponent implements OnInit {
     this.chart5.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
     this.chart5.data = this.data2019["Finland"];
-
     this.chart5.innerRadius = am4core.percent(40);
-    // chart.depth = 120;
-
-    // this.chart5.legend = new am4charts.Legend();
-    // this.chart5.legend.maxHeight = 150;
-    // this.chart5.legend.scrollable = true;
 
     let series5 = this.chart5.series.push(new am4charts.PieSeries());
     series5.labels.template.disabled = true;
@@ -19628,33 +19599,12 @@ export class DonutComponent implements OnInit {
     legendContainer.width = am4core.percent(100);
     legendContainer.height = am4core.percent(10);
 
-    this.chart5.legend = new am4charts.Legend();
-    
+    this.chart5.legend = new am4charts.Legend();    
     this.chart5.legend.valueLabels.template.disabled = true;
     this.chart5.legend.maxWidth = 30;
     this.chart5.legend.labels.template.truncate = true;
     this.chart5.legend.itemContainers.template.togglable = false;
-    // this.chart5.legend.itemContainers.template.focusble = false;
-    // this.chart5.legend.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.default;
     this.chart5.legend.parent = legendContainer;
-    // for (var i = 0; i < this.chart5.series.length; i++) {
-    //   var Series = this.chart5.series.getIndex(i);
-    //   Series.events.on("hidden", function (ev) {
-    //     var index = this.chart5.series.indexOf(ev.target);
-    //     this.chart.series.getIndex(index).hide();
-    //     this.chart2.series.getIndex(index).hide();
-    //     this.chart3.series.getIndex(index).hide();
-    //     this.chart4.series.getIndex(index).hide();
-    //   });
-
-    //   Series.events.on("shown", function (ev) {
-    //     var index = this.chart5.series.indexOf(ev.target);
-    //     this.chart.series.getIndex(index).show();
-    //     this.chart2.series.getIndex(index).show();
-    //     this.chart3.series.getIndex(index).show();
-    //     this.chart4.series.getIndex(index).show();
-    //   });
-    // }
   }
 
 }

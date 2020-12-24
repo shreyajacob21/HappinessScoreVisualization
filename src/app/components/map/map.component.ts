@@ -2758,7 +2758,6 @@ export class MapComponent implements OnInit {
     heatLegend.minValue = 2.8;
     heatLegend.maxValue = 7.7;
     heatLegend.orientation = "vertical";
-    // heatLegend = "Series: [bold {color}]{name}[/]";
 
     setInterval(()=>{
       if(this.icon=="pause")

@@ -236,6 +236,8 @@ categoryAxis.renderer.labels.template.verticalCenter = "middle";
 categoryAxis.tooltip.label.rotation = 270;
 categoryAxis.tooltip.label.horizontalCenter = "right";
 categoryAxis.tooltip.label.verticalCenter = "middle";
+categoryAxis.title.text = "Country";
+categoryAxis.title.fontWeight = "bold";
 
 let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
 valueAxis.title.text = "Happiness Score";
