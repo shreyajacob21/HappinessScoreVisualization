@@ -20,6 +20,13 @@ interface Year {
 export class MapComponent implements OnInit {
 
   constructor() { }
+  icon = "pause";
+  changeIcon(){
+    if(this.icon == "pause")
+      this.icon = "play_arrow";
+    else
+      this.icon = "pause";
+  }
   selectedValue: any = "2019";
   years: Year[] = [{ value: '2015', viewValue: '2015' }, { value: '2016', viewValue: '2016' }, { value: '2017', viewValue: '2017' },
   { value: '2018', viewValue: '2018' }, { value: '2019', viewValue: '2019' }];
@@ -2674,7 +2681,7 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.loadChart();
     this.imageSeries.data = this.mapData[4];
-    this.title.text = "[font-size: 18]Happiness Score of the World in " + "2019";
+    this.title.text = "[bold font-size: 18]Happiness Score of the World in " + "2019";
   }
 
   loadChart(){
@@ -2751,15 +2758,17 @@ export class MapComponent implements OnInit {
     heatLegend.minValue = 2.8;
     heatLegend.maxValue = 7.7;
     heatLegend.orientation = "vertical";
-
+    // heatLegend = "Series: [bold {color}]{name}[/]";
 
     setInterval(()=>{
+      if(this.icon=="pause")
+        this.i++;
       if(this.i==5)
         this.i=0;
       this.imageSeries.data = this.mapData[this.i];
-      this.title.text = "[font-size: 18]Happiness Score of the World in " + (2015+this.i).toString();
-      this.i++;
-   }, 5000);
+      this.title.text = "[bold font-size: 18]Happiness Score of the World in " + (2015+this.i).toString();
+      
+   }, 3000);
   }
   
   

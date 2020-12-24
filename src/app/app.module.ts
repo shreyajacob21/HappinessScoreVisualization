@@ -10,6 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { BarComponent } from './components/bar/bar.component';
 import { MatGridListModule} from '@angular/material/grid-list';
+import { MatButtonModule } from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 import { DonutComponent } from './components/donut/donut.component';
 import { CompareComponent } from './components/compare/compare.component'
 
@@ -29,6 +31,8 @@ import { CompareComponent } from './components/compare/compare.component'
     AppRoutingModule,
     MatSelectModule,
     MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule,
     MatGridListModule
   ],
   providers: [],

@@ -328,11 +328,20 @@ export class CompareComponent implements OnInit {
 
     let openBullet: any = this.series.bullets.create(am4charts.CircleBullet);
     openBullet.locationX = 1;
-
+    openBullet.fill = this.chart.colors.getIndex(0);
     let closeBullet = this.series.bullets.create(am4charts.CircleBullet);
 
-    closeBullet.fill = this.chart.colors.getIndex(4);
+    closeBullet.fill = this.chart.colors.getIndex(6);
     closeBullet.stroke = closeBullet.fill;
+
+    
+    this.chart.legend.data = [{
+      "name": this.selectedCountry1,
+      "fill": this.chart.colors.getIndex(0)
+    }, {
+      "name": this.selectedCountry2,
+      "fill": this.chart.colors.getIndex(6)
+    }];
   }
   loadchart() {
 
@@ -359,9 +368,10 @@ export class CompareComponent implements OnInit {
     valueAxis.renderer.ticks.template.disabled = true;
     valueAxis.renderer.axisFills.template.disabled = true;
 
+    this.chart.legend = new am4charts.Legend();
     this.createSeries();
 
-
+    
 
     this.chart.cursor = new am4charts.XYCursor();
     this.chart.cursor.behavior = "zoomY";

@@ -1,29 +1,30 @@
 <div class="row text-center">
+    <div id="title" class="p-1">Compare</div>
     <div class="col-4">
-    <mat-form-field appearance="fill" style="width : 50%;">
-        <mat-label>Country</mat-label>
+    <mat-form-field style="width : 50%;">
             <mat-select  [(ngModel)]="selectedCountry1" name = "country1" (ngModelChange)="onSelectCountry1()">
             <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
             </mat-select>
     </mat-form-field>
 </div>
 <div class="col-4">
-    <mat-form-field appearance="fill" style="width : 50%;">
-        <mat-label>Country</mat-label>
-            <mat-select  [(ngModel)]="selectedCountry2" name = "country2" (ngModelChange)="onSelectCountry2()">
-            <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
-            </mat-select>
-    </mat-form-field>
-</div>
-<div class="col-4">
-    <mat-form-field appearance="fill" style="width : 50%;">
+    <mat-form-field style="width : 50%;">
         <mat-label>Year</mat-label>
             <mat-select  [(ngModel)]="selectedYear" name = "year" (ngModelChange)="onSelectYear()">
             <mat-option [value]="year" *ngFor="let year of years">{{ year }}</mat-option>
             </mat-select>
     </mat-form-field>
 </div>
+<div class="col-4">
+    <mat-form-field style="width : 50%;">
+        <mat-label>Country</mat-label>
+            <mat-select  [(ngModel)]="selectedCountry2" name = "country2" (ngModelChange)="onSelectCountry2()">
+            <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
+            </mat-select>
+    </mat-form-field>
+</div>
+
 </div>
 <div class="row">
-<div id = "chartdiv4" style="height:18rem;"></div>
+<div id = "chartdiv4" style="height:16.5rem;"></div>
 </div>
