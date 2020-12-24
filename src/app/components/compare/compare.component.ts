@@ -197,7 +197,7 @@ export class CompareComponent implements OnInit {
 
   years = [2015, 2016, 2017, 2018, 2019];
   selectedCountry1 = "Afghanistan";
-  selectedCountry2 = "Albania";
+  selectedCountry2 = "Finland";
   selectedYear = 2019;
 
   data2015 = [
@@ -348,7 +348,7 @@ export class CompareComponent implements OnInit {
 
     this.chart = am4core.create("chartdiv4", am4charts.XYChart);
 
-    let data = this.data2018;
+    let data = this.data2019;
 
     this.chart.data = data;
 
