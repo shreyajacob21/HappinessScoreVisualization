@@ -1,7 +1,9 @@
 <!-- <div style="float: left;"> -->
+    <div class="row title-center title">
+        Happiness score division of {{selectedValue}}
+</div>
 <div class="row">
-    <mat-form-field appearance="fill" style="width : 25%;">
-        <mat-label>Country</mat-label>
+    <mat-form-field style="width : 25%;">
         <mat-select [(ngModel)]="selectedValue" name="country" (ngModelChange)="onSelectCountry()">
             <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
         </mat-select>
@@ -9,9 +11,7 @@
 </div>
 <!-- </div> -->
 <div class="row">
-    <div class="row title-center">
-            Happiness score division of {{selectedValue}}
-    </div>
+   
     <div id="chartdiv3" style="height: 10rem;"></div>
     <div id="legenddiv" style="height:7rem;"></div>
 </div>

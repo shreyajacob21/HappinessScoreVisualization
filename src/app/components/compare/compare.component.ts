@@ -197,7 +197,7 @@ export class CompareComponent implements OnInit {
 
   years = [2015, 2016, 2017, 2018, 2019];
   selectedCountry1 = "Afghanistan";
-  selectedCountry2 = "Albania";
+  selectedCountry2 = "Finland";
   selectedYear = 2019;
 
   data2015 = [
@@ -328,18 +328,27 @@ export class CompareComponent implements OnInit {
 
     let openBullet: any = this.series.bullets.create(am4charts.CircleBullet);
     openBullet.locationX = 1;
-
+    openBullet.fill = this.chart.colors.getIndex(0);
     let closeBullet = this.series.bullets.create(am4charts.CircleBullet);
 
-    closeBullet.fill = this.chart.colors.getIndex(4);
+    closeBullet.fill = this.chart.colors.getIndex(6);
     closeBullet.stroke = closeBullet.fill;
+
+    
+    this.chart.legend.data = [{
+      "name": this.selectedCountry1,
+      "fill": this.chart.colors.getIndex(0)
+    }, {
+      "name": this.selectedCountry2,
+      "fill": this.chart.colors.getIndex(6)
+    }];
   }
   loadchart() {
 
 
     this.chart = am4core.create("chartdiv4", am4charts.XYChart);
 
-    let data = this.data2018;
+    let data = this.data2019;
 
     this.chart.data = data;
 
@@ -359,9 +368,10 @@ export class CompareComponent implements OnInit {
     valueAxis.renderer.ticks.template.disabled = true;
     valueAxis.renderer.axisFills.template.disabled = true;
 
+    this.chart.legend = new am4charts.Legend();
     this.createSeries();
 
-
+    
 
     this.chart.cursor = new am4charts.XYCursor();
     this.chart.cursor.behavior = "zoomY";

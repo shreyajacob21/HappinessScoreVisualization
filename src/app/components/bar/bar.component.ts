@@ -209,12 +209,18 @@ export class BarComponent implements OnInit {
     ngOnInit(): void {
     this.loadchart();
   }
-
+  icon = "pause";
+  changeIcon(){
+    if(this.icon == "pause")
+      this.icon = "play_arrow";
+    else
+      this.icon = "pause";
+  }
   loadchart(){
 // Create chart instance
 let chart = am4core.create("chartdiv2", am4charts.XYChart3D);
 let title = chart.titles.create();
-title.text = "[font-size: 16]Happiness Score of top 10 ranked countries in " + "2019";
+title.text = "[bold font-size: 16]Happiness Score of top 10 ranked countries in " + "2019";
 title.textAlign = "middle";
 // Add data
 chart.data = this.Data[4];
@@ -261,12 +267,13 @@ chart.cursor.lineX.strokeOpacity = 0;
 chart.cursor.lineY.strokeOpacity = 0;
 
 setInterval(() =>{
+  if(this.icon=="pause")
+        this.i++;
     if(this.i==5)
       this.i=0;
     chart.data = this.Data[this.i];
-    title.text = "[font-size: 16]Happiness Score of top 10 ranked countries in " + (2015+this.i).toString();
-    this.i++;
+    title.text = "[bold font-size: 16]Happiness Score of top 10 ranked countries in " + (2015+this.i).toString();
     chart.invalidateRawData();
-}, 5000);
+}, 3000);
   }
 }
