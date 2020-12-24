@@ -1,23 +1,28 @@
-
-<div id="title">Compare</div>
-<div style="display: flex;justify-content: space-around;">
-    <mat-form-field style="width : 25%;">
-        
+<div class="row text-center">
+    <div id="title" class="p-1">Compare</div>
+    <div class="col-4">
+    <mat-form-field style="width : 50%;">
             <mat-select  [(ngModel)]="selectedCountry1" name = "country1" (ngModelChange)="onSelectCountry1()">
             <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
             </mat-select>
     </mat-form-field>
-    <mat-form-field  style="width : 25%;">
-        
+</div>
+<div class="col-4">
+    <mat-form-field style="width : 50%;">
             <mat-select  [(ngModel)]="selectedYear" name = "year" (ngModelChange)="onSelectYear()">
             <mat-option [value]="year" *ngFor="let year of years">{{ year }}</mat-option>
             </mat-select>
     </mat-form-field>
-    <mat-form-field  style="width : 25%;">
-        
+</div>
+<div class="col-4">
+    <mat-form-field style="width : 50%;">
             <mat-select  [(ngModel)]="selectedCountry2" name = "country2" (ngModelChange)="onSelectCountry2()">
             <mat-option [value]="country" *ngFor="let country of countries">{{ country }}</mat-option>
             </mat-select>
-        </mat-form-field>
-    </div>
-    <div id = "chartdiv4" style="height: 400px; width: 730px;"></div>
+    </mat-form-field>
+</div>
+
+</div>
+<div class="row">
+<div id = "chartdiv4" style="height:16.5rem;"></div>
+</div>
