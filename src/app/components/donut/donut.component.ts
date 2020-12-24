@@ -165,7 +165,7 @@ export class DonutComponent implements OnInit {
     "Zimbabwe"
   ];
   constructor() { }
-  selectedValue = 'Afghanistan';
+  selectedValue = 'Finland';
   onSelectCountry() {
     this.chart.data = this.data2015[this.selectedValue];
     this.chart2.data = this.data2016[this.selectedValue];
@@ -19483,7 +19483,7 @@ export class DonutComponent implements OnInit {
     this.chart = container.createChild(am4charts.PieChart);
     this.chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-    this.chart.data = this.data2015["Afghanistan"];
+    this.chart.data = this.data2015["Finland"];
 
     this.chart.innerRadius = am4core.percent(40);
     // chart.depth = 120;
@@ -19512,7 +19512,7 @@ export class DonutComponent implements OnInit {
     this.chart2 = container.createChild(am4charts.PieChart);
     this.chart2.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-    this.chart2.data = this.data2016["Afghanistan"];
+    this.chart2.data = this.data2016["Finland"];
 
     this.chart2.innerRadius = am4core.percent(40);
     // chart.depth = 120;
@@ -19529,7 +19529,7 @@ export class DonutComponent implements OnInit {
     series2.colors.step = 2;
 
     let label2 = series2.createChild(am4core.Label);
-    label2.text = "{values.value.sum}";;
+    label2.text = "{values.value.sum}";
     label2.horizontalCenter = "middle";
     label2.verticalCenter = "middle";
     label2.fontSize = 20;
@@ -19541,7 +19541,7 @@ export class DonutComponent implements OnInit {
     this.chart3 = container.createChild(am4charts.PieChart);
     this.chart3.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-    this.chart3.data = this.data2017["Afghanistan"];
+    this.chart3.data = this.data2017["Finland"];
 
     this.chart3.innerRadius = am4core.percent(40);
     // chart.depth = 120;
@@ -19570,7 +19570,7 @@ export class DonutComponent implements OnInit {
     this.chart4 = container.createChild(am4charts.PieChart);
     this.chart4.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-    this.chart4.data = this.data2018["Afghanistan"];
+    this.chart4.data = this.data2018["Finland"];
     this.chart4.innerRadius = am4core.percent(40);
     // chart.depth = 120;
 
@@ -19586,7 +19586,7 @@ export class DonutComponent implements OnInit {
     series4.colors.step = 2;
 
     let label4 = series4.createChild(am4core.Label);
-    label4.text = "{values.value.sum}";;
+    label4.text = "{values.value.sum}";
     label4.horizontalCenter = "middle";
     label4.verticalCenter = "middle";
     label4.fontSize = 20;
@@ -19598,7 +19598,7 @@ export class DonutComponent implements OnInit {
     this.chart5 = container.createChild(am4charts.PieChart);
     this.chart5.hiddenState.properties.opacity = 0; // this creates initial fade-in
 
-    this.chart5.data = this.data2019["Afghanistan"];
+    this.chart5.data = this.data2019["Finland"];
 
     this.chart5.innerRadius = am4core.percent(40);
     // chart.depth = 120;
@@ -19626,14 +19626,17 @@ export class DonutComponent implements OnInit {
 
     let legendContainer = am4core.create("legenddiv", am4core.Container);
     legendContainer.width = am4core.percent(100);
-    legendContainer.height = am4core.percent(100);
+    legendContainer.height = am4core.percent(10);
 
     this.chart5.legend = new am4charts.Legend();
-    this.chart5.legend.parent = legendContainer;
+    
     this.chart5.legend.valueLabels.template.disabled = true;
-    this.chart5.legend.labels.template.maxWidth = 50;
+    this.chart5.legend.maxWidth = 30;
     this.chart5.legend.labels.template.truncate = true;
-
+    this.chart5.legend.itemContainers.template.togglable = false;
+    // this.chart5.legend.itemContainers.template.focusble = false;
+    // this.chart5.legend.itemContainers.template.cursorOverStyle = am4core.MouseCursorStyle.default;
+    this.chart5.legend.parent = legendContainer;
     // for (var i = 0; i < this.chart5.series.length; i++) {
     //   var Series = this.chart5.series.getIndex(i);
     //   Series.events.on("hidden", function (ev) {
